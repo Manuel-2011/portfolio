@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function () {
+export default function Test2() {
   return (
     <>
       <h1>Hola test 2</h1>
