@@ -49,7 +49,7 @@ export default function Navbar() {
                 name="checkedA"
               />
             }
-            label="Dark Mode"
+            label="Dark Theme"
           />
         </Toolbar>
       </AppBar>
