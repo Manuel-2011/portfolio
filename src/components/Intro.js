@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid, Paper, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageIntro from './ImageIntro';
+import FlipCard from './FlipCard';
 
 const useStyles = makeStyles({
   introContainer: {
@@ -22,13 +23,8 @@ const Intro = () => {
       justify="center"
       alignItems="center"
     >
-      <Grid item>
-        <Paper className={classes.title}>
-          <Typography variant="h1" color="primary">
-            Manuel Mosquera
-          </Typography>
-          <Typography variant="h2">Web Developer</Typography>
-        </Paper>
+      <Grid item xs={5}>
+        <FlipCard />
       </Grid>
       <Grid item>
         <ImageIntro />
