@@ -1,18 +1,19 @@
 import { CssBaseline, Paper } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
 import Intro from './components/Intro';
-import { lightTheme } from './themes';
+import Navbar from './components/Navbar';
+import SwitchTheme from './components/SwitchTheme';
 
 const App = () => {
   return (
     <>
       <CssBaseline />
-      <ThemeProvider theme={lightTheme}>
+      <SwitchTheme>
         <Paper>
+          <Navbar />
           <Intro />
         </Paper>
-      </ThemeProvider>
+      </SwitchTheme>
     </>
   );
 };

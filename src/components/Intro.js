@@ -5,7 +5,7 @@ import ImageIntro from './ImageIntro';
 
 const useStyles = makeStyles({
   introContainer: {
-    height: '100vh',
+    height: '90vh',
   },
   title: {
     marginRight: 30,
