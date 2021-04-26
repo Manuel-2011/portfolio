@@ -69,7 +69,11 @@ const Profile = () => {
         </Typography>
       </Grid>
       <Grid item>
-        <Button variant="outlined" color="secondary" className={classes.button}>
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.button}
+        >
           My projects
         </Button>
       </Grid>
