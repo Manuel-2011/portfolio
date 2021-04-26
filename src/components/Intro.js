@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageIntro from './ImageIntro';
 import FlipCard from './FlipCard';
@@ -42,6 +42,9 @@ const UseStyles2 = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
   },
+  button: {
+    fontSize: '1.5rem',
+  },
 }));
 const Profile = () => {
   const classes = UseStyles2();
@@ -54,11 +57,21 @@ const Profile = () => {
       alignItems="center"
     >
       <Grid item>
+        <Typography variant="h1" color="primary">
+          Profile
+        </Typography>
+      </Grid>
+      <Grid item>
         <Typography className={classes.text}>
           Bilingual <strong>web developer</strong> focus on{' '}
           <strong>front-end development</strong>. One of the things that drives
           me is finding solutions to real-world problems through technology.
         </Typography>
+      </Grid>
+      <Grid item>
+        <Button variant="outlined" color="secondary" className={classes.button}>
+          My projects
+        </Button>
       </Grid>
     </Grid>
   );

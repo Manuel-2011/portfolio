@@ -42,8 +42,12 @@ const FlipCard = ({ front, back }) => {
 
   return (
     <div className={classes.card}>
-      <Paper className={classes.front}>{front()}</Paper>
-      <Paper className={classes.back}>{back()}</Paper>
+      <Paper className={classes.front} elevation={7}>
+        {front()}
+      </Paper>
+      <Paper className={classes.back} elevation={7}>
+        {back()}
+      </Paper>
     </div>
   );
 };
