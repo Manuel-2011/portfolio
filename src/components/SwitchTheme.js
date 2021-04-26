@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { lightTheme, darkTheme } from '../themes';
+import PropTypes from 'prop-types';
 
 const SwitchThemeContext = React.createContext();
 
@@ -14,6 +15,10 @@ const SwitchTheme = ({ children }) => {
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </SwitchThemeContext.Provider>
   );
+};
+
+SwitchTheme.propTypes = {
+  children: PropTypes.element,
 };
 
 export default SwitchTheme;
