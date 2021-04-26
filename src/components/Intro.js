@@ -1,8 +1,68 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageIntro from './ImageIntro';
 import FlipCard from './FlipCard';
+
+const UseStyles1 = makeStyles({
+  gridContainer: {
+    height: '100%',
+  },
+});
+const MainTitle = () => {
+  const classes = UseStyles1();
+  return (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      className={classes.gridContainer}
+    >
+      <Grid item>
+        <Typography variant="h1" color="primary">
+          Manuel Mosquera
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography variant="h2">Web Developer</Typography>
+      </Grid>
+    </Grid>
+  );
+};
+
+const UseStyles2 = makeStyles((theme) => ({
+  gridContainer: {
+    height: '100%',
+  },
+  text: {
+    margin: 20,
+    fontSize: '1.5rem',
+    '& strong': {
+      color: theme.palette.primary.main,
+    },
+  },
+}));
+const Profile = () => {
+  const classes = UseStyles2();
+  return (
+    <Grid
+      container
+      className={classes.gridContainer}
+      direction="column"
+      justify="center"
+      alignItems="center"
+    >
+      <Grid item>
+        <Typography className={classes.text}>
+          Bilingual <strong>web developer</strong> focus on{' '}
+          <strong>front-end development</strong>. One of the things that drives
+          me is finding solutions to real-world problems through technology.
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+};
 
 const useStyles = makeStyles({
   introContainer: {
@@ -24,7 +84,7 @@ const Intro = () => {
       alignItems="center"
     >
       <Grid item xs={5}>
-        <FlipCard />
+        <FlipCard front={() => <MainTitle />} back={() => <Profile />} />
       </Grid>
       <Grid item>
         <ImageIntro />

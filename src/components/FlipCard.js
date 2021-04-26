@@ -1,6 +1,7 @@
-import { Paper, Typography } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   card: {
@@ -36,26 +37,20 @@ const useStyles = makeStyles({
   },
 });
 
-const FlipCard = () => {
+const FlipCard = ({ front, back }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.card}>
-      {/* <Paper className={classes.title}>
-          <Typography variant="h1" color="primary">
-            Manuel Mosquera
-          </Typography>
-          <Typography variant="h2">Web Developer</Typography>
-        </Paper> */}
-      <Paper className={classes.front}>
-        <Typography variant="h1" color="primary">
-          Manuel Mosquera
-        </Typography>
-        <Typography variant="h2">Web Developer</Typography>
-      </Paper>
-      <Paper className={classes.back}>Back</Paper>
+      <Paper className={classes.front}>{front()}</Paper>
+      <Paper className={classes.back}>{back()}</Paper>
     </div>
   );
+};
+
+FlipCard.propTypes = {
+  front: PropTypes.func.isRequired,
+  back: PropTypes.func.isRequired,
 };
 
 export default FlipCard;
