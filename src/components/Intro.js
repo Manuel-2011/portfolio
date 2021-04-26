@@ -3,6 +3,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageIntro from './ImageIntro';
 import FlipCard from './FlipCard';
+import BackgroundForms from './BackGroundForms';
 
 const UseStyles1 = makeStyles({
   gridContainer: {
@@ -94,19 +95,22 @@ const useStyles = makeStyles({
 const Intro = () => {
   const classes = useStyles();
   return (
-    <Grid
-      container
-      className={classes.introContainer}
-      justify="center"
-      alignItems="center"
-    >
-      <Grid item xs={5}>
-        <FlipCard front={() => <MainTitle />} back={() => <Profile />} />
+    <>
+      <BackgroundForms />
+      <Grid
+        container
+        className={classes.introContainer}
+        justify="center"
+        alignItems="center"
+      >
+        <Grid item xs={5}>
+          <FlipCard front={() => <MainTitle />} back={() => <Profile />} />
+        </Grid>
+        <Grid item>
+          <ImageIntro />
+        </Grid>
       </Grid>
-      <Grid item>
-        <ImageIntro />
-      </Grid>
-    </Grid>
+    </>
   );
 };
 
