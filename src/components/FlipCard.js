@@ -3,7 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   card: {
     perspective: 1500,
     width: '100%',
@@ -15,6 +15,9 @@ const useStyles = makeStyles({
     '&:hover $back': {
       transform: 'rotateY(0deg)',
     },
+    [theme.breakpoints.down('xs')]: {
+      height: 400,
+    },
   },
   front: {
     width: '100%',
@@ -24,6 +27,9 @@ const useStyles = makeStyles({
     top: 0,
     left: 0,
     transition: 'all .8s ease',
+    [theme.breakpoints.down('xs')]: {
+      height: 400,
+    },
   },
   back: {
     width: '100%',
@@ -34,8 +40,11 @@ const useStyles = makeStyles({
     top: 0,
     left: 0,
     transition: 'all .8s ease',
+    [theme.breakpoints.down('xs')]: {
+      height: 400,
+    },
   },
-});
+}));
 
 const FlipCard = ({ front, back }) => {
   const classes = useStyles();

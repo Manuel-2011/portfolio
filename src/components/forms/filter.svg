@@ -1,0 +1,16 @@
+<svg>
+        <defs>
+          <filter id="goo">
+            <feGaoussianBlur in="SourceGraphic" stdDeviation="10" />
+            <feColorMatrix
+              in="name"
+              mode="matrix"
+              values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 30 -15"
+            />
+            <feBlend in="SourceGraphic" />
+          </filter>
+        </defs>
+      </svg>

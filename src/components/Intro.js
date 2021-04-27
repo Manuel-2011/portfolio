@@ -21,12 +21,14 @@ const MainTitle = () => {
       className={classes.gridContainer}
     >
       <Grid item>
-        <Typography variant="h1" color="primary">
+        <Typography variant="h1" color="primary" align="center">
           Manuel Mosquera
         </Typography>
       </Grid>
       <Grid item>
-        <Typography variant="h2">Web Developer</Typography>
+        <Typography variant="h2" align="center">
+          Web Developer
+        </Typography>
       </Grid>
     </Grid>
   );
@@ -38,13 +40,9 @@ const UseStyles2 = makeStyles((theme) => ({
   },
   text: {
     margin: 20,
-    fontSize: '1.5rem',
     '& strong': {
       color: theme.palette.primary.main,
     },
-  },
-  button: {
-    fontSize: '1.5rem',
   },
 }));
 const Profile = () => {
@@ -63,7 +61,7 @@ const Profile = () => {
         </Typography>
       </Grid>
       <Grid item>
-        <Typography className={classes.text}>
+        <Typography className={classes.text} variant="h5" component="p">
           Bilingual <strong>web developer</strong> focus on{' '}
           <strong>front-end development</strong>. One of the things that drives
           me is finding solutions to real-world problems through technology.
@@ -71,6 +69,7 @@ const Profile = () => {
       </Grid>
       <Grid item>
         <Button
+          size="large"
           variant="contained"
           color="secondary"
           className={classes.button}
@@ -82,31 +81,38 @@ const Profile = () => {
   );
 };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   introContainer: {
     height: '90vh',
+    minHeight: '525px',
+    position: 'relative',
   },
   title: {
-    marginRight: 30,
-    padding: 20,
+    zIndex: 10,
   },
-});
+  profileImage: {
+    zIndex: 0,
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+}));
 
 const Intro = () => {
   const classes = useStyles();
   return (
     <>
-      <BackgroundForms />
+      <BackgroundForms styles={{ zIndex: 5 }} />
       <Grid
         container
         className={classes.introContainer}
         justify="center"
         alignItems="center"
       >
-        <Grid item xs={5}>
+        <Grid item xs={10} md={10} lg={5} className={classes.title}>
           <FlipCard front={() => <MainTitle />} back={() => <Profile />} />
         </Grid>
-        <Grid item>
+        <Grid item className={classes.profileImage}>
           <ImageIntro />
         </Grid>
       </Grid>
