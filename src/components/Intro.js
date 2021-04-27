@@ -3,7 +3,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageIntro from './ImageIntro';
 import FlipCard from './FlipCard';
-import BackgroundForms from './BackGroundForms';
+import BackgroundForms from './BackgroundForms';
 
 const UseStyles1 = makeStyles({
   gridContainer: {
