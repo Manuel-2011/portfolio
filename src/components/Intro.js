@@ -9,6 +9,14 @@ const UseStyles1 = makeStyles({
   gridContainer: {
     height: '100%',
   },
+  clickMe: {
+    display: 'none',
+    '@media only screen and (hover: none)': {
+      display: 'block',
+      position: 'absolute',
+      bottom: '1rem',
+    },
+  },
 });
 const MainTitle = () => {
   const classes = UseStyles1();
@@ -28,6 +36,11 @@ const MainTitle = () => {
       <Grid item>
         <Typography variant="h2" align="center">
           Web Developer
+        </Typography>
+      </Grid>
+      <Grid item className={classes.clickMe}>
+        <Typography color="primary" variant="body2" align="center">
+          (Click Me!)
         </Typography>
       </Grid>
     </Grid>
