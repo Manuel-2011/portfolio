@@ -9,6 +9,10 @@ module.exports = {
       filename: 'bundle.js',
     },
   },
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/dist',
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'dist')],
